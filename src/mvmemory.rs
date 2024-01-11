@@ -271,7 +271,7 @@ where
             BVacant(vacant) => {
                 vacant.insert(DataCell {
                     flag: Flag::Done,
-                    value: value,
+                    value,
                     incarnation: version.incarnation,
                 });
             }

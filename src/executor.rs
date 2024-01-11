@@ -41,8 +41,8 @@ where
         block_size: usize,
     ) -> Executor<L, V, VM, Scheduler, MVMemory> {
         Executor::<L, V, VM, Scheduler, MVMemory> {
-            concurrency: concurrency,
-            vm: vm,
+            concurrency,
+            vm,
             scheduler: Scheduler::new(block_size),
             mvmemory: MVMemory::new(block_size),
             _l: Default::default(),
@@ -64,9 +64,9 @@ where
         }
 
         Executor::<L, V, VM, Scheduler, MVMemory> {
-            concurrency: concurrency,
-            vm: vm,
-            scheduler: scheduler,
+            concurrency,
+            vm,
+            scheduler,
             mvmemory: MVMemory::new(block_size),
             _l: Default::default(),
             _v: Default::default(),

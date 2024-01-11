@@ -47,8 +47,8 @@ impl types::Scheduler for Scheduler {
             execution_index: Default::default(),
             num_active_tasks: Default::default(),
             decrease_count: Default::default(),
-            all_txn_state: all_txn_state,
-            block_size: block_size,
+            all_txn_state,
+            block_size,
         }
     }
     fn done(&self) -> bool {
@@ -144,7 +144,7 @@ impl types::Scheduler for Scheduler {
             } else {
                 return Some(types::Task {
                     kind: types::TaskKind::Validation,
-                    version: version,
+                    version,
                 });
             }
         }
@@ -259,7 +259,7 @@ impl Scheduler {
             if status == TxnStatus::Executed {
                 return Some(types::Version {
                     index: validation_index,
-                    incarnation: incarnation,
+                    incarnation,
                 });
             }
         }
